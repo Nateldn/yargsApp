@@ -1,13 +1,12 @@
+// Imports go here
+const yargs = require("yargs"); 
+const Movie = require("./utils");
+// Avoid global variables - 
 
-
-const yargs = require("yargs"); // Imports go here
-
-// Avoid global variables- 
-
-const app = (yargsObj) => { 
+const app = (yargsObj) => {  //function to add new movie objects
     if (yargsObj.add) {
-        console.log("You typed");
-        const movie = new Movie(yargsObj.title, yargsObj.actor);
+        console.log("You typed.......");
+        const movie = new Movie(yargsObj.title, yargsObj.actor, yargsObj.director);
         movie.add();
         console.log(movie.list());
         // Add movie to array
@@ -19,4 +18,5 @@ const app = (yargsObj) => {
  
 
 
-console.log(yargs.argv.title);
+
+app(yargs.argv)
